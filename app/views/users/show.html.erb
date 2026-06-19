@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+<strong>Email: </strong> <%= @user.email %>
+<br>
+<br>
+<%= link_to "Edit", edit_user_path(@user) %>
+&emsp;
+<%= link_to 'Destroy', @user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+&emsp;
+<%= link_to "Back", users_path %>
