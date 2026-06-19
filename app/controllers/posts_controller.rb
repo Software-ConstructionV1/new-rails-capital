@@ -1,3 +1,5 @@
 class PostsController < ApplicationController
-  # your code goes here
+  def index
+    @posts = {"first_post": "this is the first post", "second_post": "this is the second post"}
+  end
 end
