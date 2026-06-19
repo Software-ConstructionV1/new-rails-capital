@@ -8,3 +8,96 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: CanvasText;
+  background-color: Canvas;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid currentColor;
+}
+
+th {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+input[type='submit'],
+button,
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+input[type='submit'],
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='submit']:hover,
+button:hover {
+  opacity: 0.7;
+}
+
+a {
+  border-bottom: 1px dashed currentColor;
+}
+
+a:hover {
+  border-bottom-style: solid;
+}
+
+.error {
+  padding: 0.5rem;
+  border: 1px dashed currentColor;
+  border-radius: 4px;
+  font-weight: bold;
+}
