@@ -1,0 +1,7 @@
+<h1>Comment</h1>
+
+<p><strong>Author:</strong> <%= @comment.author %></p>
+<p><strong>Body:</strong> <%= @comment.body %></p>
+
+<%= link_to "Edit", edit_comment_path(@comment) %> |
+<%= link_to "Back to Comments", comments_path %>
