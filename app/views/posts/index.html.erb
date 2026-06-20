@@ -1,16 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Posts — New Rails Capital" %>
 
-<% content_for :title, "Posts" %>
-
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+<div class="page-header">
+  <h1 class="page-title">Posts</h1>
+  <%= link_to "Write a post", new_post_path, class: "btn btn--primary" %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<% if @posts.empty? %>
+  <div class="empty-state">
+    <div class="empty-state__icon">✦</div>
+    <h2 class="empty-state__heading">Nothing here yet</h2>
+    <p class="empty-state__sub">Be the first to publish something.</p>
+    <%= link_to "Write a post", new_post_path, class: "btn btn--primary" %>
+  </div>
+<% else %>
+  <div class="posts-list">
+    <% @posts.each do |post| %>
+      <%= link_to post, class: "post-card" do %>
+        <div class="post-card__title"><%= post.title %></div>
+        <div class="post-card__excerpt"><%= post.content %></div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

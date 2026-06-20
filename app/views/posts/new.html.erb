@@ -1,11 +1,7 @@
-<% content_for :title, "New post" %>
+<% content_for :title, "New Post — New Rails Capital" %>
 
-<h1>New post</h1>
+<div class="page-header">
+  <h1 class="page-title">New post</h1>
+</div>
 
 <%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
-</div>

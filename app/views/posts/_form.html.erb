@@ -1,27 +1,31 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="form-card">
+  <%= form_with(model: post) do |form| %>
+    <% if post.errors.any? %>
+      <div class="form-errors">
+        <p class="form-errors__title">
+          <%= pluralize(post.errors.count, "error") %> prevented this post from saving:
+        </p>
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="form-group">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-input", placeholder: "Give your post a title" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :content, class: "form-label" %>
+      <%= form.text_area :content, class: "form-textarea", placeholder: "Write something…" %>
+    </div>
+
+    <div class="form-footer">
+      <%= form.submit class: "btn btn--primary" %>
+      <%= link_to "Cancel", posts_path, class: "btn btn--ghost" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

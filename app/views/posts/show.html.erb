@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "#{@post.title} — New Rails Capital" %>
 
-<%= render @post %>
+<article class="post-article">
+  <h1 class="post-article__title"><%= @post.title %></h1>
+  <div class="post-article__body"><%= @post.content %></div>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>
+  <div class="post-actions">
+    <%= link_to "Edit", edit_post_path(@post), class: "btn btn--ghost" %>
+    <%= button_to "Delete", @post, method: :delete,
+          form: { data: { turbo_confirm: "Delete this post?" } },
+          class: "btn btn--danger" %>
+    <%= link_to "← All posts", posts_path, class: "btn btn--ghost" %>
+  </div>
+</article>
