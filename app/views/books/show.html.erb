@@ -1,0 +1,16 @@
+<h1><%= @book.title %></h1>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Description:</strong><br>
+  <%= simple_format(@book.description) %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_book_path(@book) %> |
+  <%= link_to "Back to Books", books_path %>
+</p>
