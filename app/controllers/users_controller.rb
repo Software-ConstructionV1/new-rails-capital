@@ -1,3 +1,46 @@
 class UsersController < ApplicationController
-  "Your code goes here"
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to @user, noctice: "User Created!"
+    else
+      render :new, status: :unprocessable_content
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    if User.update(user_params)
+      redirect_to @user, noctice: "User updated!"
+    else
+      render :edit, statsu: :unprocessable_content
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_url, notice: "User deleted!"
+  end
+
+
+  def user_params
+    params.require(:user).permit(:name, :dob, :email, :phone_number)
+  end
 end
