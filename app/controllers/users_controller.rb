@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
   # PATCH /users/:id
   def update
-    @p
     @user = User.find(params[:id])
     @user.name = params[:user][:name]
     @user.email = params[:user][:email]
