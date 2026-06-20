@@ -49,3 +49,25 @@ Why migrations matter:
 - They make database changes part of application version control
 - They help teammates and deployment environments stay synchronized
 - They provide a documented history of how the data model evolved over time
+
+## Ruby Object Model Summary
+Ruby models are objects created from classes, and every value in Ruby is an object. Objects encapsulate state in instance variables and behavior in methods. The Ruby object model supports inheritance, mixins, singleton methods, and dynamic method lookup, which means classes are themselves objects and can be modified at runtime.
+
+Key points:
+- Classes are objects of class `Class`; metaprogramming is a first-class feature.
+- Instance variables belong to objects, while class variables are shared across a class hierarchy.
+- Method lookup walks the inheritance chain and included modules, enabling flexible behavior composition.
+- Singleton classes allow objects to have methods defined only on a single instance.
+
+This model emphasizes that code and data are unified: methods can be added or overridden dynamically, and objects can acquire new behavior through modules or singleton methods.
+
+## Ruby Modules Summary
+Ruby modules are reusable containers for methods, constants, and nested classes or modules. They cannot be instantiated directly but can be included or extended into classes or objects to share behavior.
+
+Key points:
+- `include` mixes module instance methods into a class, allowing objects of that class to call them.
+- `extend` adds module methods as singleton methods to a class or object, which is useful for module-level utilities.
+- Modules support namespacing to organize code and avoid constant name collisions.
+- Modules can also be used as mixins to implement shared behavior without the complexity of multiple inheritance.
+
+Modules are a core Ruby abstraction for composition and code reuse. They help keep the object hierarchy clean while enabling shared behavior across unrelated classes.
