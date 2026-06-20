@@ -1,3 +1,4 @@
 class PostsController < ApplicationController
-  # your code goes here
+  def index
+  end
 end
