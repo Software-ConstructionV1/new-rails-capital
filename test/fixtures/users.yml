@@ -5,9 +5,11 @@ one:
   dob: 1990-01-01
   email: user1@example.com
   phone_number: "1234567890"
+  address: "123 Main St"
 
 two:
   name: User Two
   dob: 1995-05-05
   email: user2@example.com
   phone_number: "0987654321"
+  address: "456 Oak Ave"
