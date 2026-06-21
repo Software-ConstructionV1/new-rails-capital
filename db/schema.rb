@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_21_144249) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_21_150101) do
+  create_table "post_editings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "edited_post_id", null: false
+    t.integer "post_editor_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["edited_post_id"], name: "index_post_editings_on_edited_post_id"
+    t.index ["post_editor_id"], name: "index_post_editings_on_post_editor_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
@@ -27,5 +36,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_21_144249) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "post_editings", "posts", column: "edited_post_id"
+  add_foreign_key "post_editings", "users", column: "post_editor_id"
   add_foreign_key "posts", "users", column: "creator_id"
 end
