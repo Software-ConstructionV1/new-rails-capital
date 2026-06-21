@@ -1,25 +1,20 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
-  # GET /posts
+  
   def index
     @posts = Post.all
   end
 
-  # GET /posts/1
   def show
-  end
-
-  # GET /posts/new
+  en
+ 
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
   def edit
   end
-
-  # POST /posts/commit
+ 
   def create
     @post = Post.new(post_params)
 
@@ -34,7 +29,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
+ 
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -47,7 +42,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
   def destroy
     @post.destroy!
 
