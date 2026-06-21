@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+["Zeyad", "MoAbdHaq", "Khalil"].each do |username|
+	User.find_or_create_by!(name: username, email: username + "@emil.com")
+end
+
+["Zeyad", "MoAbdHaq", "Khalil"].each do |username|
+	Editor.find_or_create_by!(name: username)
+end
