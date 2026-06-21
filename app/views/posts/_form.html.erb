@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :creator_id, "Creator", style: "display: block" %>
+    <%= form.collection_select :creator_id, User.all, :id, :name, prompt: "Choose a creator" %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

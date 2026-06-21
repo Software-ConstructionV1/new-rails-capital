@@ -9,4 +9,14 @@
     <%= post.content %>
   </div>
 
+  <div>
+    <strong>Creator:</strong>
+    <%= post.creator&.name %>
+  </div>
+
+  <div>
+    <strong>Editors:</strong>
+    <%= post.editors.any? ? post.editors.map(&:name).join(", ") : "None" %>
+  </div>
+
 </div>
