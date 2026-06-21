@@ -1,0 +1,14 @@
+<%= form_with model: @movie do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+<%= button_to "Cancel", movies_path, method: :get %>
