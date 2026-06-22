@@ -1,0 +1,6 @@
+class AddUserAndCreatorToPosts < ActiveRecord::Migration[8.1]
+  def change
+    add_reference :posts, :user, null: false, foreign_key: true
+    add_reference :posts, :creator, null: false, foreign_key: { to_table: :users }
+  end
+end

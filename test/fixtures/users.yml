@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Karim Ibrahim
+  dob: 2000-01-01
+  email: karim@example.com
+  phone_number: "01000000001"
+  address: Cairo
+
+two:
+  name: Ruby Student
+  dob: 2001-02-02
+  email: student@example.com
+  phone_number: "01000000002"
+  address: Giza
