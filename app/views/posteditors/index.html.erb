@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posteditors" %>
+
+<h1>Posteditors</h1>
+
+<div id="posteditors">
+  <% @posteditors.each do |posteditor| %>
+    <%= render posteditor %>
+    <p>
+      <%= link_to "Show this posteditor", posteditor %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New posteditor", new_posteditor_path %>

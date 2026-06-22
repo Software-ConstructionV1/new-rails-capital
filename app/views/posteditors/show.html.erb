@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @posteditor %>
+
+<div>
+  <%= link_to "Edit this posteditor", edit_posteditor_path(@posteditor) %> |
+  <%= link_to "Back to posteditors", posteditors_path %>
+
+  <%= button_to "Destroy this posteditor", @posteditor, method: :delete %>
+</div>
