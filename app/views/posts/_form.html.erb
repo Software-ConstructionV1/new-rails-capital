@@ -20,7 +20,19 @@
     <%= form.label :content, style: "display: block" %>
     <%= form.text_field :content %>
   </div>
-
+    <div>
+    <%= form.label :user_id, "Creator" %>
+    <%= form.collection_select :user_id, @users, :id, :name, prompt: "Select a creator" %>
+  </div>
+  <div>
+      <label>Editors</label>
+      <% @editors.each do |editor| %>
+     <div>
+      <%= check_box_tag "post[editor_ids][]", editor.id, @post.editors.include?(editor) %>
+      <%= label_tag "post[editor_ids][]", editor.name %>
+      </div>
+     <% end %>
+    </div>
   <div>
     <%= form.submit %>
   </div>
