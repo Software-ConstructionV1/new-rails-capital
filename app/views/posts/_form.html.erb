@@ -17,8 +17,13 @@
   </div>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.textarea :body %>
+  </div>
+
+  <div>
+    <%= form.label :creator_id, style: "display: block" %>
+    <%= form.text_field :creator_id %>
   </div>
 
   <div>
